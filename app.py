@@ -17,7 +17,7 @@ def predict():
     if request.method == 'POST':
         message = request.form['message']
         data = [message]
-        Vector = CV.fit_transform(data).toarray()
+        Vector = CV.transform(data).toarray()
         my_prediction = model.predict(Vector)
         return render_template('result.html',prediction = my_prediction)
 
